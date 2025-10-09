@@ -1,8 +1,7 @@
 import axios from 'axios';
-import ENV from './env'; 
 
 const api = axios.create({
-  baseURL: ENV.BASE_URL,
+  baseURL: "http://192.168.72.225:3000", 
   timeout: 10000,
   headers: { 'Content-Type': 'application/json' },
 });
@@ -10,7 +9,7 @@ const api = axios.create({
 api.interceptors.response.use(
   response => response,
   error => {
-    console.error('Erro na API:', error);
+    console.error('Error in API:', error);
     return Promise.reject(error);
   }
 );
