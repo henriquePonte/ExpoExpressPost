@@ -7,7 +7,7 @@ const Stack = createNativeStackNavigator();
 
 export default function AuthStack({ setUser }) {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Login">
         {(props) => <LoginScreen {...props} setUser={setUser} />}
       </Stack.Screen>
